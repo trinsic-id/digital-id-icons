@@ -1,0 +1,17 @@
+<!-- Digital ID Icons by Trinsic Technologies, Inc. | CC BY 4.0 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <g fill="currentColor" stroke="none">
+    <circle cx="3.73" cy="10.79" r="1.55"/>
+    <circle cx="5.60" cy="7.76" r="1.55"/>
+    <circle cx="8.52" cy="5.72" r="1.55"/>
+    <circle cx="12" cy="5" r="1.55"/>
+    <circle cx="15.48" cy="5.72" r="1.55"/>
+    <circle cx="18.40" cy="7.76" r="1.55"/>
+    <circle cx="20.27" cy="10.79" r="1.55"/>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 15h4a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-4"/>
+    <path d="M4.5 18H13"/>
+    <path d="M10.5 15.5l2.5 2.5-2.5 2.5"/>
+  </g>
+</svg>
