@@ -51,4 +51,4 @@ External SVG files loaded through `<img>` do not inherit the parent page's `colo
 
 ## Size
 
-Use 24 px or larger. At smaller sizes, the top and bottom components can merge and the relationship vocabulary becomes harder to perceive. Provide adequate target size and spacing when an icon is interactive; the artwork's 24 px canvas is not itself a sufficient touch target.
+Use category icons at 24 px or larger. At smaller sizes, the top and bottom components can merge and the relationship vocabulary becomes harder to perceive. Attribute icons are drawn for 16 px and larger. Provide adequate target size and spacing when an icon is interactive; the artwork's 24 px canvas is not itself a sufficient touch target.

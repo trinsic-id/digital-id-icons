@@ -26,6 +26,14 @@ Numeral marks (“18+”, and numeral-shaped candles) were named as age every ti
 
 The current icon, a calendar with a keyhole, was tested the same way with three reviewers. All three named it as a date of birth or an age check, with medium confidence; one described it unprompted as an age check that does not reveal the date. Two were unsure whether the mark inside was a keyhole or a person. All three picked it as the icon least like the rest of the set, because it uses none of the shared components. That is expected for a standalone icon; eID Cards was picked the same way in earlier runs.
 
+### Attribute icons
+
+The attribute icons were tested for naming at 16 px over six rounds. In each round, three reviewers each saw every attribute icon on one scrambled, numbered sheet, were told only that each icon labels a field of identity data, and were asked to name the object, guess the field, and list icons they would confuse.
+
+Early rounds replaced icons that read as something else. An accessibility-style figure for sex became the combined symbol. Overlapping rings for a data match became a registry with a check. A smartphone for device read as a phone number and became a laptop. Three lines for a note read as a menu.
+
+In the final round, the badges carried their meaning: issue date, issuing authority, issuing country, nationality, document number, and personal number were each named correctly by all three reviewers. Date of birth, expiry, certificate, data match, face check, and selfie also read reliably. The status badge (an "i") read as "details", and portrait, note, image authenticity, authentication, screening, and identity provider were placed in the right family but needed their labels to name the field.
+
 ### Pixel grid
 
 For 1.0 the geometry was aligned to the pixel grid. The aligned and unaligned sets were each shown to three reviewers under the same conditions. All five component families were found in every run, for both sets. One icon regressed: a narrower car read as a bell or a dome, so the aligned car keeps the original roof width. In a follow-up it was named as a car in both runs.
@@ -42,6 +50,8 @@ The human preference sample was `n=3`. It is too small to support population-lev
 - The registry relationship between Database Check and Biometric Registries was not detected once the full person capture frame was used. The clearer Biometric Registries icon was kept, accepting that loss.
 - The EU dots can resemble a loading indicator without labels.
 - Age Verification stands outside the component families and is read as the odd one out. At 24 px its keyhole can be mistaken for a person.
+- At 16 px, attribute icons that share a base differ only by a small badge. The five document icons are the hardest to tell apart; labels carry the field.
+- The three icons with a number sign (identifier, document number, personal number) all read as "a number".
 - eID Cards is specifically a card-based electronic identity category; it does not represent every form of electronic identity.
 - The set has not been evaluated across languages, cultures, assistive technologies, or a representative sample of digital identity users.
 

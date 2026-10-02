@@ -8,6 +8,7 @@ The following material is licensed under the [Creative Commons Attribution 4.0 I
 
 - `icons/**`
 - `components/**`
+- `attributes/**`
 - `docs/**`
 - `README.md`
 - `ATTRIBUTION.md`

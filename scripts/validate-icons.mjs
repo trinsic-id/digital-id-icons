@@ -22,11 +22,70 @@ const expected = {
     "reusable-ids.svg",
   ],
   components: [
+    "biometric.svg",
     "eu-dots.svg",
-    "person.svg",
     "registry.svg",
     "sign-in.svg",
     "wallet.svg",
+  ],
+  attributes: [
+    "address.svg",
+    "assurance.svg",
+    "authentication.svg",
+    "certificate.svg",
+    "date-of-birth.svg",
+    "device.svg",
+    "document.svg",
+    "document-back.svg",
+    "document-number.svg",
+    "document-status.svg",
+    "email.svg",
+    "expiration-date.svg",
+    "face-check.svg",
+    "family.svg",
+    "file.svg",
+    "identifier.svg",
+    "image-authenticity.svg",
+    "issue-date.svg",
+    "issuing-authority.svg",
+    "issuing-country.svg",
+    "language.svg",
+    "legal-status.svg",
+    "location.svg",
+    "match.svg",
+    "name.svg",
+    "nationality.svg",
+    "note.svg",
+    "organization.svg",
+    "personal-number.svg",
+    "personal-status.svg",
+    "phone.svg",
+    "physical-description.svg",
+    "place-of-birth.svg",
+    "portrait.svg",
+    "provider.svg",
+    "raw-data.svg",
+    "report.svg",
+    "screening.svg",
+    "selfie.svg",
+    "sex.svg",
+    "signature.svg",
+    "status.svg",
+    "timestamp.svg",
+    "vehicle.svg",
+  ],
+  "attributes/badges": [
+    "check.svg",
+    "clock.svg",
+    "flag.svg",
+    "info.svg",
+    "issuer.svg",
+    "magnifier.svg",
+    "number.svg",
+    "pencil.svg",
+    "person.svg",
+    "seal.svg",
+    "shield.svg",
   ],
 };
 
@@ -87,6 +146,7 @@ function validateSvg(file, svg) {
 }
 
 async function listSvgDirectory(name) {
+  // Lists only the SVG files directly inside the directory; subdirectories are checked on their own.
   const entries = (await readdir(path.join(root, name)))
     .filter((entry) => entry.endsWith(".svg"))
     .sort();
@@ -98,7 +158,7 @@ async function listSvgDirectory(name) {
 }
 
 const svgByRelativePath = new Map();
-for (const directory of ["icons", "components"]) {
+for (const directory of ["icons", "components", "attributes", "attributes/badges"]) {
   for (const filename of await listSvgDirectory(directory)) {
     const relative = `${directory}/${filename}`;
     const svg = await readFile(path.join(root, relative), "utf8");
@@ -118,7 +178,7 @@ const componentUse = {
     "icons/bank-based-ids.svg",
     "icons/eidas-1-0.svg",
   ],
-  "components/person.svg": [
+  "components/biometric.svg": [
     "icons/reusable-ids.svg",
     "icons/biometric-registries.svg",
   ],
@@ -152,13 +212,39 @@ for (const iconPath of ["icons/biometric-registries.svg"]) {
   }
 }
 
+// Attribute icons: a base object plus a bottom-right badge. A badge must be byte-identical in every icon
+// that uses it, so it means the same thing everywhere. Bases are cut around the badge, so they vary.
+const badgeUse = {
+  "attributes/badges/check.svg": ["attributes/face-check.svg", "attributes/match.svg", "attributes/report.svg"],
+  "attributes/badges/clock.svg": ["attributes/expiration-date.svg"],
+  "attributes/badges/flag.svg": ["attributes/issuing-country.svg", "attributes/nationality.svg"],
+  "attributes/badges/info.svg": ["attributes/document-status.svg", "attributes/personal-status.svg"],
+  "attributes/badges/issuer.svg": ["attributes/issue-date.svg", "attributes/issuing-authority.svg"],
+  "attributes/badges/magnifier.svg": ["attributes/screening.svg"],
+  "attributes/badges/number.svg": ["attributes/document-number.svg", "attributes/personal-number.svg"],
+  "attributes/badges/pencil.svg": ["attributes/note.svg"],
+  "attributes/badges/person.svg": ["attributes/date-of-birth.svg", "attributes/place-of-birth.svg", "attributes/portrait.svg"],
+  "attributes/badges/seal.svg": ["attributes/certificate.svg"],
+  "attributes/badges/shield.svg": ["attributes/image-authenticity.svg"],
+};
+
+for (const [badgePath, iconPaths] of Object.entries(badgeUse)) {
+  const elements = drawableElements(svgByRelativePath.get(badgePath));
+  for (const iconPath of iconPaths) {
+    for (const element of elements) {
+      if (!svgByRelativePath.get(iconPath).includes(element)) fail(iconPath, `does not preserve ${badgePath}: ${element}`);
+    }
+  }
+}
+
 for (const file of ["components/eu-dots.svg", "icons/eudi-wallets.svg", "icons/eidas-1-0.svg"]) {
   const circles = svgByRelativePath.get(file).match(/<circle\b/g)?.length ?? 0;
   if (circles !== 7) fail(file, `EU-related cue must contain seven dots, found ${circles}`);
 }
 
 const iconFingerprints = new Map();
-for (const iconPath of [...svgByRelativePath.keys()].filter((file) => file.startsWith("icons/"))) {
+const canonical = (file) => file.startsWith("icons/") || (file.startsWith("attributes/") && !file.startsWith("attributes/badges/"));
+for (const iconPath of [...svgByRelativePath.keys()].filter(canonical)) {
   const fingerprint = drawableElements(svgByRelativePath.get(iconPath)).join("");
   const duplicate = iconFingerprints.get(fingerprint);
   if (duplicate) fail(iconPath, `duplicates canonical geometry from ${duplicate}`);
@@ -187,8 +273,10 @@ console.log(JSON.stringify({
   verdict: "pass",
   canonicalIcons: expected.icons.length,
   publicComponents: expected.components.length,
+  attributeIcons: expected.attributes.length,
+  attributeBadges: expected["attributes/badges"].length,
   checkedSvgFiles: svgByRelativePath.size,
-  componentRelationshipsChecked: Object.values(componentUse).flat().length,
+  componentRelationshipsChecked: Object.values(componentUse).flat().length + Object.values(badgeUse).flat().length,
   accessibilityPolicy: "embedding-context",
   licenseMap: {
     artworkAndDocumentation: "CC-BY-4.0",
