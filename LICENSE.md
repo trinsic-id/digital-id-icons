@@ -1,37 +1,19 @@
-# License map
+# License
 
-Digital ID Icons uses different standard licenses for artwork/documentation and code.
+Digital ID Icons uses two standard licenses.
 
-## CC BY 4.0
+**[CC BY 4.0](./LICENSES/CC-BY-4.0.txt)** covers the artwork and documentation: `icons/**`, `components/**`, `attributes/**`, `docs/**`, `README.md`, `CONTRIBUTING.md`, and `CHANGELOG.md`.
 
-The following material is licensed under the [Creative Commons Attribution 4.0 International Public License](./LICENSES/CC-BY-4.0.txt):
-
-- `icons/**`
-- `components/**`
-- `attributes/**`
-- `docs/**`
-- `README.md`
-- `ATTRIBUTION.md`
-- `CONTRIBUTING.md`
-- `CHANGELOG.md`
+**[MIT](./LICENSES/MIT.txt)** covers the code: `scripts/**`, `examples/**`, `.github/**`, `package.json`, `.gitignore`, and any other code or build configuration.
 
 Copyright © 2026 Trinsic Technologies, Inc.
 
-## MIT
+## Trademarks
 
-The following material is licensed under the [MIT License](./LICENSES/MIT.txt):
+The licenses do not grant rights to Trinsic's names, logos, service marks, or trade dress, beyond what attribution reasonably needs. Using the icons does not imply that Trinsic sponsors, endorses, or is affiliated with your product or adaptation.
 
-- `scripts/**`
-- `examples/**`
-- `.github/**`
-- `package.json`
-- `.gitignore`
-- other code and build configuration not listed above
+The icons are not official marks of the European Union, eIDAS, the EUDI Wallet program, any government, any bank, or any identity provider. The EU-related component is a seven-dot arc, deliberately not the twelve-star EU emblem.
 
-Copyright © 2026 Trinsic Technologies, Inc.
+“Trinsic” and the Trinsic logo are trademarks of Trinsic Technologies, Inc. Third-party names belong to their owners.
 
-## Not licensed
-
-The licenses above do not grant rights to Trinsic's names, logos, or trademarks and do not imply affiliation, sponsorship, endorsement, or official status. See [`TRADEMARKS.md`](./TRADEMARKS.md).
-
-This file explains which license applies; the complete license texts control.
+This file explains which license applies; the full license texts control.

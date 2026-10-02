@@ -1,48 +1,27 @@
 # Contributing
 
-Digital ID Icons is a visual vocabulary, not an open-ended pictogram collection. A contribution should make the system more useful without weakening its grammar.
+Digital ID Icons is a visual vocabulary, not an open-ended icon collection. A new icon should make the system more useful without weakening its grammar.
 
-## Before drawing
+## Start with an issue
 
-Open an issue that answers:
-
-1. What digital identity concept is missing?
-2. Who needs to distinguish it, and in what context?
-3. Which existing icons could it be confused with?
-4. Which component family should it join: wallet, sign-in, registry, biometric, EU-related, or none?
-5. Does the concept rely on a government, company, standards-body, or provider mark?
-
-Maintainers may decide that a concept is too specific, too ambiguous, or better represented by an existing icon.
+Say what concept or field is missing, which existing icons it could be confused with, and where it belongs: which component family (wallet, sign-in, registry, biometric, EU-related) for a category icon, or which base and badge for an attribute icon. Or say why it should stand alone.
 
 ## Drawing rules
 
-- Use a 24×24 viewBox and keep the useful geometry inside the established live area.
-- Use `currentColor`; do not hard-code brand colors.
-- Default to 2 px strokes with round caps and joins.
-- Centre straight strokes on whole units so they render sharply at 24 px.
-- Preserve shared component geometry exactly when joining an existing family.
-- Prefer one clear relationship over decorative detail.
-- Test at 24 px, not only at presentation sizes.
-- Do not use embedded scripts, event handlers, external references, fonts, raster images, or editor metadata.
-- Do not copy path data from another icon set.
-
-For an attribute icon, name the field it labels, the base it belongs on, and the badge that distinguishes it, or why it should stand alone.
+- 24×24 viewBox, `currentColor`, 2-unit strokes with round caps and joins.
+- Centre straight strokes on whole units so they render sharply.
+- Keep shared components and badges byte-identical; the validator enforces it.
+- Test at the size the icon is used: 24 px for categories, 16 px for attributes.
+- No scripts, external references, fonts, raster images, masks, or editor metadata.
+- Don't copy path data from another icon set, or submit a third-party mark without documenting the right to use it.
 
 Read [`docs/design-system.md`](./docs/design-system.md) before changing a component. The wallet's unbroken top edge, the position of the biometric frame, the bank lintel, and the database proportions are load-bearing.
 
-## Rights
+## In the pull request
 
-By contributing artwork, you agree that your contribution is available under CC BY 4.0 and that you have the right to provide it under that license. By contributing code or tooling, you agree that your contribution is available under MIT.
-
-Do not submit a recognizable government, standards-body, company, provider, or product mark without documenting the right to use and redistribute it. Attribution does not create endorsement.
-
-## What a pull request needs
-
-- The issue it resolves.
-- The concept and confusion risks.
-- Before/after renders at 24 px and 48 px for geometry changes.
-- A short naming test and grouping test with the label key withheld from the reviewer.
-- Updated README icon table, design-system documentation, and changelog when behavior changes.
+- Renders at the target size and at 48 px.
+- A short naming test, and a grouping test if shared parts change, with labels hidden from the reviewer.
+- Updated README, design system, and changelog where behavior changes.
 - A passing `npm run check`.
 
-Maintainers decide stable filenames, display names, and whether an icon belongs in the canonical set. Renaming or removing a canonical slug is a breaking change.
+Artwork you contribute is licensed under CC BY 4.0 and code under MIT. Renaming or removing an icon is a breaking change.
