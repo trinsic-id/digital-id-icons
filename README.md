@@ -1,10 +1,12 @@
 # Digital ID Icons
 
-An open visual vocabulary for recurring concepts related to digital IDs, designed by [Riley Hughes](https://x.com/rileyphughes) at [Trinsic](https://www.trinsic.id).
+An open visual vocabulary for recurring concepts related to digital IDs.
 
-The set uses shared visual components to show relationships between categories, concepts, and functionality. It has two parts: ten icons for categories of digital ID, built from five reusable components, and 44 icons for the attributes a verification returns, built from 11 badges. Contributions welcome.
+The set uses shared visual components to show relationships between categories, concepts, and functionality. It has two parts: ten icons for categories of digital ID built from five reusable components, and 44 icons for the attributes a verification returns, built from 11 badges. 
 
-## The icons
+The icons were designed to sit comfortably beside Lucide and similar sets of icons. The grid and stroke follow similar conventions, but these icons were drawn from scratch. Contributions welcome.
+
+## Category icons
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./docs/preview-categories-dark.svg">
@@ -109,7 +111,7 @@ The minimum recommended display size is **24 px** for category icons, whose two-
 
 ## How it was made
 
-Designed by [Riley Hughes](https://x.com/rileyphughes), who art-directed and approved every icon. Concepts were explored, drafted, and blind-tested with AI models, and each SVG is custom geometry on the 24×24 grid. No path data was copied from another icon set; the grid and stroke follow the same conventions as Lucide and similar outline sets, so the icons sit comfortably beside them. [Testing and limitations](./docs/testing.md) records what was tested and what didn't work.
+Designed by [Riley Hughes](https://x.com/rileyphughes) with execution and iteration assisted by AI.
 
 ## Attribution
 
