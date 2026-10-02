@@ -22,7 +22,9 @@ A browser-based comparison presented independent concept icons against the compo
 
 Age Verification was added after the initial nine. Candidates were tested one at a time: each reviewer saw the existing nine plus a single candidate, scrambled and unlabeled, with no mention of age. Showing several age candidates together was avoided because it primes reviewers toward age for everything on the sheet.
 
-Numeral marks (“18+”, and numeral-shaped candles) were named as age every time and singled out as the icon that did not belong every time. The candles were named as age and joined a component family; eID Cards, not the candidate, was picked as the least consistent icon in those runs. Each candidate had two runs, so these results are directional.
+Numeral marks (“18+”, and numeral-shaped candles) were named as age every time and singled out as the icon that did not belong every time. Birthday candles on the registry were named as age and joined a component family, but read first as a birthday cake.
+
+The current icon, a calendar with a keyhole, was tested the same way with three reviewers. All three named it as a date of birth or an age check, with medium confidence; one described it unprompted as an age check that does not reveal the date. Two were unsure whether the mark inside was a keyhole or a person. All three picked it as the icon least like the rest of the set, because it uses none of the shared components. That is expected for a standalone icon; eID Cards was picked the same way in earlier runs.
 
 ### Pixel grid
 
@@ -39,7 +41,7 @@ The human preference sample was `n=3`. It is too small to support population-lev
 - The wallet family was detected inconsistently in later model-based grouping runs; EUDI Wallets was the member most likely to drop out.
 - The registry relationship between Database Check and Biometric Registries was not detected once the full person capture frame was used. The clearer Biometric Registries icon was kept, accepting that loss.
 - The EU dots can resemble a loading indicator without labels.
-- Age Verification reads first as a birthday cake. Its registry relationship to Biometric Registries was detected in one of two grouping runs.
+- Age Verification stands outside the component families and is read as the odd one out. At 24 px its keyhole can be mistaken for a person.
 - eID Cards is specifically a card-based electronic identity category; it does not represent every form of electronic identity.
 - The set has not been evaluated across languages, cultures, assistive technologies, or a representative sample of digital identity users.
 

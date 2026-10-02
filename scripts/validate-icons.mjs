@@ -22,7 +22,6 @@ const expected = {
     "reusable-ids.svg",
   ],
   components: [
-    "candles.svg",
     "eu-dots.svg",
     "person.svg",
     "registry.svg",
@@ -128,7 +127,6 @@ const componentUse = {
     "icons/eidas-1-0.svg",
   ],
   "components/registry.svg": ["icons/database-check.svg"],
-  "components/candles.svg": ["icons/age-verification.svg"],
 };
 
 for (const [componentPath, iconPaths] of Object.entries(componentUse)) {
@@ -141,12 +139,12 @@ for (const [componentPath, iconPaths] of Object.entries(componentUse)) {
   }
 }
 
-// The combining registry form has no component file; its members must still share it exactly.
+// The combining registry form has no component file; it must stay exactly as documented.
 const combiningRegistry = [
   '<ellipse cx="12" cy="17" rx="7" ry="2"/>',
   '<path d="M5 17v2c0 1.1 3.13 2 7 2s7-.9 7-2v-2"/>',
 ];
-for (const iconPath of ["icons/biometric-registries.svg", "icons/age-verification.svg"]) {
+for (const iconPath of ["icons/biometric-registries.svg"]) {
   for (const element of combiningRegistry) {
     if (!svgByRelativePath.get(iconPath).includes(element)) {
       fail(iconPath, `does not preserve the combining registry form: ${element}`);

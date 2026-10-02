@@ -9,7 +9,7 @@ Open an issue that answers:
 1. What digital identity concept is missing?
 2. Who needs to distinguish it, and in what context?
 3. Which existing icons could it be confused with?
-4. Which component family should it join: wallet, sign-in, registry, person, EU-related, age, or none?
+4. Which component family should it join: wallet, sign-in, registry, person, EU-related, or none?
 5. Does the concept rely on a government, company, standards-body, or provider mark?
 
 Maintainers may decide that a concept is too specific, too ambiguous, or better represented by an existing icon.

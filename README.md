@@ -2,7 +2,7 @@
 
 An open visual vocabulary for recurring concepts related to digital IDs, designed by [Riley Hughes](https://x.com/rileyphughes) at [Trinsic](https://www.trinsic.id).
 
-The set uses shared visual components to show relationships between categories, concepts, and functionality. The initial release is small (ten canonical icons, composed of six reusable components) but future releases may extend the icon set beyond categories and into other concepts. Contributions welcome.
+The set uses shared visual components to show relationships between categories, concepts, and functionality. The initial release is small (ten canonical icons, composed of five reusable components) but future releases may extend the icon set beyond categories and into other concepts. Contributions welcome.
 
 ## The icons
 
@@ -23,10 +23,11 @@ Most icons combine a top mark—what kind of ID it is—with a bottom component�
 | --- | --- | --- |
 | Wallet | A credential held and presented from a wallet | National ID Wallets, Mobile Driver's Licenses, EUDI Wallets |
 | Sign-in | A redirect or sign-in to an existing identity provider | Reusable IDs, Bank-based IDs, eIDAS 1.0 |
-| Registry | A lookup against an authoritative source | Database Check, Biometric Registries, Age Verification |
+| Registry | A lookup against an authoritative source | Database Check, Biometric Registries |
 | Person | An abstract biometrics-related cue | Reusable IDs, Biometric Registries |
 | EU dots | An abstract EU-related cue | EUDI Wallets, eIDAS 1.0 |
-| Candles | An age-related cue: the answer is an age, not a full identity | Age Verification |
+
+Two icons stand alone. eID Cards is the one physical card in the set. Age Verification is a calendar with a keyhole: the date of birth is checked, but it stays locked.
 
 The shared parts are available in [`components/`](./components/) for people extending the system. Read the [design system](./docs/design-system.md) before modifying them.
 
