@@ -2,6 +2,12 @@
 
 Public releases of Digital ID Icons will be recorded here. Internal design rounds are intentionally kept out of the public release history.
 
+## Unreleased
+
+### Changed
+
+- Rewrote the design system and testing pages as short reference pages.
+
 ## 1.1.0 — 2026-10-01
 
 ### Added

@@ -1,65 +1,39 @@
 # Design system
 
-Digital ID Icons is built as a compositional language. Shared geometry indicates shared behavior; changing a component in only one icon can make a relationship disappear.
+Icons in this set share parts. A shared part means the same thing in every icon that uses it, so changing a part in one icon breaks the relationship.
 
-## Grid and grammar
+## Drawing rules
 
-Every icon uses a 24×24 viewBox. Composed icons have two fixed regions:
+- 24×24 viewBox.
+- 2-unit stroke, round caps and joins, `fill="none"` for outlines.
+- `currentColor` for every stroke and fill.
+- Straight strokes centred on whole units, so they render sharply at 24 px. Circles and ellipses centred on whole or half units. The EU dots are the exception: small filled circles can't render sharply.
+- Minimum display size: 24 px for category icons, 16 px for attribute icons.
 
-- **Top region, y 3–12:** what the identity is. Marks that meet the bottom component, such as the flagpole and the car, continue to it.
-- **Bottom region, y 15–21:** how the identity is held or accessed.
+## Category icons
 
-The drawing system uses:
+### Layout
 
-- `stroke-width="2"`
-- round caps and joins
-- `fill="none"` for outlined geometry
-- `currentColor` for strokes and for the filled EU dots
-- a recommended minimum display size of 24 px
+Most category icons have two regions.
 
-## Pixel grid
+| Region | Rows | Shows |
+| --- | --- | --- |
+| Top | y 3–12 | What kind of ID it is |
+| Bottom | y 15–21 | How the ID is held or accessed |
 
-Straight strokes are centred on whole units, so a 2 px stroke covers exactly two pixel rows at 24 px and four at 48 px. Circles and ellipses sit on whole or half units. The EU dots are the one exception: small filled circles cannot render sharply at any position.
+A top mark can extend down to meet the bottom component, as the flagpole and the car do.
 
-## Components
+### Components
 
-### Wallet
+| Component | Meaning | Used by | Rule |
+| --- | --- | --- | --- |
+| Wallet | A credential held and presented from a wallet | National ID Wallets, Mobile Driver's Licenses, EUDI Wallets | Keep the top edge unbroken. Marks can meet it but not cut through it. |
+| Sign-in | A sign-in to an identity provider the user already has | Reusable IDs, Bank-based IDs, eIDAS 1.0 | — |
+| Registry | A lookup against an authoritative source | Database Check (full form), Biometric Registries (combining form) | The combining form is shorter, to leave room for a top mark. The two forms are not byte-identical. |
+| Biometric | Biometric capture of the person | Reusable IDs, Biometric Registries | Keep the frame inside the top region. |
+| EU dots | Related to the EU | EUDI Wallets, eIDAS 1.0 | Always seven dots. This is not the twelve-star EU emblem and not an official EU, EUDI, or eIDAS mark. |
 
-Appears in National ID Wallets, Mobile Driver's Licenses, and EUDI Wallets. It indicates a credential held and presented directly from a wallet.
-
-The wallet's top edge must remain unbroken. Marks may meet it, but should not cut through it. When the edge was broken during testing, readers stopped seeing a shared wallet shape and instead saw unrelated objects sitting in a tray.
-
-### Sign-in
-
-Appears in Reusable IDs, Bank-based IDs, and eIDAS 1.0. The arrow entering a bounded area indicates that the user is redirected or signed in to an identity provider they already use.
-
-### Registry
-
-The full three-band form is the Database Check icon. Biometric Registries uses a compressed combining form to leave room for a top mark.
-
-This is the system's one intentional component variation. The full and combining forms share the same meaning but are not byte-identical.
-
-### Biometric
-
-Appears in Reusable IDs and Biometric Registries. Four capture corners around a head indicate that the subject is the person rather than a document.
-
-The frame stays inside the top region. Extending it around the full icon makes the registry base read as shoulders or a pedestal.
-
-### EU dots
-
-Appears in EUDI Wallets and eIDAS 1.0. It is a seven-dot arc used as an abstract EU-related cue. It is not the twelve-star EU emblem, an official EUDI mark, or an official eIDAS mark. Any adaptations under CC BY 4.0 must not imply official status, sponsorship, approval, or endorsement.
-
-## Standalone icons
-
-### Age Verification
-
-A calendar with a keyhole. The calendar is the date of birth; the keyhole says it stays locked. An age check answers whether someone is old enough without handing over the date itself, so the icon shows a date you can't read rather than an age.
-
-It stands alone because age is not a way of holding or accessing an ID: the same answer can come from a wallet, a sign-in, or a registry lookup. The keyhole is outlined rather than filled. A filled circle over a trapezoid reads as a person at 24 px.
-
-Numerals and birthday imagery were tested for this icon and rejected. “18+” names the concept instantly, but reviewers consistently singled it out as typography rather than a drawn object, and a number fixes one jurisdiction's threshold. Candles read as age but also as a birthday cake, and said nothing about the privacy that makes a digital age check different from showing an ID card.
-
-## Canonical compositions
+### Compositions
 
 | Icon | Top | Bottom |
 | --- | --- | --- |
@@ -71,29 +45,29 @@ Numerals and birthday imagery were tested for this icon and rejected. “18+” 
 | eIDAS 1.0 | EU dots | Sign-in |
 | Database Check | Full registry | — |
 | Biometric Registries | Biometric frame | Combining registry |
-| Age Verification | Calendar with keyhole | — |
-| eID Cards | Standalone card and edge chip | — |
+| eID Cards | Card with chip (standalone) | — |
+| Age Verification | Calendar with keyhole (standalone) | — |
 
-eID Cards and Age Verification are deliberately uncomposed. eID Cards is the only physical card artifact in the set and is neither held in the system's wallet shape, entered through sign-in, nor represented as a direct lookup. Age Verification describes an answer that any of those access modes can return.
+### Standalone icons
 
-## Extending the set
-
-A new icon should earn its place semantically before it is drawn. Name the concept, list its confusing neighbors, and decide which existing relationships matter. An icon that falsely joins a family is worse than one that is merely unfamiliar.
-
-Do not force every icon into the two-region grammar. A standalone icon is appropriate when the concept does not share one of the system's defined access modes.
+- **eID Cards:** a physical card with a chip. It isn't held in a wallet, signed in to, or looked up, so it uses no component.
+- **Age Verification:** a calendar (the date of birth) with a keyhole (locked). An age check confirms that a person meets an age threshold without revealing their date of birth. The answer can come from a wallet, a sign-in, or a registry, so the icon uses no component.
+  - Keep the keyhole outlined. Filled, it reads as a person at 24 px.
+  - Don't add numerals such as "18+". Age thresholds vary by jurisdiction.
 
 ## Attribute icons
 
-Attribute icons label the fields a verification returns. They share the category set's 24×24 grid, 2-unit stroke, and round joins, and are drawn to read at 16 px, where one unit is two-thirds of a pixel. At that size the shape of a part matters more than its detail.
+Attribute icons label the fields a verification returns. They use the same grid and stroke as the category icons and are drawn for 16 px.
 
 ### Base and badge
 
-Most attribute icons combine a base with a badge:
+Most attribute icons combine a base and a badge.
 
-- **The base** says what kind of value the field holds: a person, a date (calendar), a place (pin), a document (card), records (registry), a record (page), a picture (image frame), or assurance (shield).
-- **The badge** sits in the bottom-right corner, centred on (17, 17), and says which one. Base strokes are cut back so they stay 8 units from the badge centre. The clearance is part of the base path; the files use no masks.
-
-A badge is byte-identical in every icon that uses it, and the validator enforces this. The base is cut differently for each badge, so it is not.
+- **Base:** the kind of value. Person, calendar (a date), pin (a place), card (a document), registry (records), page (a record), image frame (a picture), or shield (assurance).
+- **Badge:** which value. It sits in the bottom-right corner, centred on (17, 17).
+- Base strokes stop 8 units from the badge centre. The gap is cut into the base path; the files use no masks.
+- Each badge is byte-identical in every icon that uses it, and `npm run check` enforces this. The base is cut differently for each badge.
+- Give sibling badges different outlines. At 16 px, two round badges on the same base are hard to tell apart.
 
 | Badge | Meaning | Used by |
 | --- | --- | --- |
@@ -109,23 +83,26 @@ A badge is byte-identical in every icon that uses it, and the validator enforces
 | Seal | certified | Certificate |
 | Pencil | written | Note |
 
-Where a base alone means something, it is its own icon: Name is the bare person, File the bare page, Timestamp the bare clock, Identifier the bare number sign. These unmarked members teach the reader the base before the badges modify it.
-
-Sibling badges need different silhouettes. At 16 px two round badges on the same base blur into each other, which is why the issuer is a building, not a circled mark.
+A base without a badge is its own icon: Name (person), File (page), Timestamp (clock), and Identifier (number sign).
 
 ### Standalone attribute icons
 
-Some fields have one obvious object and need no grammar: phone, email, address, sex, signature, vehicle, legal status, organization, device, language, family, physical description, raw data, and status. Like eID Cards in the category set, they stand alone.
+Phone, Email, Address, Sex, Signature, Vehicle, Legal status, Organization, Device, Language, Family, Physical description, Raw data, and Status use a single object and no badge.
 
-### Shared meanings across both sets
+## Marks shared across sets
 
-The two sets use some marks with the same meaning:
-
-- **Check:** verified. Data match, face check, and report in the attribute set.
-- **Keyhole:** locked, access controlled. Authentication in the attribute set, and Age Verification in the category set: a date of birth that is checked but stays locked.
-- **Flag:** a country. National ID Wallets in the category set; nationality and issuing country in the attribute set.
-- **Registry:** a lookup against an authoritative source. Database Check in the category set; data match in the attribute set.
-- **Sign-in:** an existing identity provider. Reusable IDs and Bank-based IDs in the category set; identity provider in the attribute set.
+| Mark | Meaning | Category icons | Attribute icons |
+| --- | --- | --- | --- |
+| Check | Verified | — | Data match, Face check, Report |
+| Keyhole | Locked | Age Verification | Authentication |
+| Flag | A country | National ID Wallets | Nationality, Issuing country |
+| Registry | A lookup against an authoritative source | Database Check | Data match |
+| Sign-in | An existing identity provider | Reusable IDs, Bank-based IDs | Identity provider |
 
 The attribute versions are drawn for their own size and position, so they are not byte-identical to the category components.
 
+## Adding an icon
+
+- Name the concept or field, and the existing icons it could be confused with.
+- Join a family only if the concept shares the family's meaning. A wrong family link misleads more than a standalone icon does.
+- See [`CONTRIBUTING.md`](../CONTRIBUTING.md) for drawing rules and what a pull request needs.

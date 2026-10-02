@@ -1,67 +1,35 @@
 # Testing and limitations
 
-Digital ID Icons was developed through iterative rendering, blind naming and grouping exercises, and a small human preference test. The evidence is useful but deliberately not presented as a representative usability study.
+The tests check whether people can identify each icon and see which icons share parts. The samples are small, so treat the results as directional.
 
-## What was tested
+## Method
 
-### Naming
+| Test | Task | Size |
+| --- | --- | --- |
+| Naming | Name the object in each unlabeled icon and guess what it represents. | 24 px for categories, 16 px for attributes |
+| Grouping | Group the icons that share a part and say what the part means. | 24 px |
+| Preference | Choose between this set and standalone concept icons, with sides randomized. | — |
 
-Reviewers saw unlabeled icons and described the concrete object they perceived. This exposed semantic collisions such as a fingerprint reading as a rainbow, a bank without a lintel reading as a house, and a steering wheel inside a composed icon reading as a person's head.
-
-### Grouping
-
-Reviewers saw a scrambled, unlabeled set and identified repeated parts. This tested the visual system rather than whether each pictogram could be guessed in isolation.
-
-Grouping produced the most consequential rule in the set: a shared component has to keep its recognizable geometry across family members. When the wallet's top edge was broken in one icon, the family relationship weakened.
-
-### Preference
-
-A browser-based comparison presented independent concept icons against the compositional system with randomized side placement. Three people participated. The result was close at the individual-icon level and favored the compositional system 2–1 overall. Three icons that lost their individual comparisons—National ID Wallets, Database Check, and Biometric Registries—were subsequently rebuilt.
-
-### Age Verification
-
-Age Verification was added after the initial nine. Candidates were tested one at a time: each reviewer saw the existing nine plus a single candidate, scrambled and unlabeled, with no mention of age. Showing several age candidates together was avoided because it primes reviewers toward age for everything on the sheet.
-
-Numeral marks (“18+”, and numeral-shaped candles) were named as age every time and singled out as the icon that did not belong every time. Birthday candles on the registry were named as age and joined a component family, but read first as a birthday cake.
-
-The current icon, a calendar with a keyhole, was tested the same way with three reviewers. All three named it as a date of birth or an age check, with medium confidence; one described it unprompted as an age check that does not reveal the date. Two were unsure whether the mark inside was a keyhole or a person. All three picked it as the icon least like the rest of the set, because it uses none of the shared components. That is expected for a standalone icon; eID Cards was picked the same way in earlier runs.
-
-### Attribute icons
-
-The attribute icons were tested for naming at 16 px over six rounds. In each round, three reviewers each saw every attribute icon on one scrambled, numbered sheet, were told only that each icon labels a field of identity data, and were asked to name the object, guess the field, and list icons they would confuse.
-
-Early rounds replaced icons that read as something else. An accessibility-style figure for sex became the combined symbol. Overlapping rings for a data match became a registry with a check. A smartphone for device read as a phone number and became a laptop. Three lines for a note read as a menu.
-
-In the final round, the badges carried their meaning: issue date, issuing authority, issuing country, nationality, document number, and personal number were each named correctly by all three reviewers. Date of birth, expiry, certificate, data match, face check, and selfie also read reliably. The status badge (an "i") read as "details", and portrait, note, image authenticity, authentication, screening, and identity provider were placed in the right family but needed their labels to name the field.
-
-### Pixel grid
-
-For 1.0 the geometry was aligned to the pixel grid. The aligned and unaligned sets were each shown to three reviewers under the same conditions. All five component families were found in every run, for both sets. One icon regressed: a narrower car read as a bell or a dome, so the aligned car keeps the original roof width. In a follow-up it was named as a car in both runs.
-
-## Who reviewed it
-
-Most blind naming and grouping runs used fresh multimodal model sessions with no access to the label key or design rationale. Those runs helped identify structural ambiguity quickly, but model behavior is not a substitute for representative human research.
-
-The human preference sample was `n=3`. It is too small to support population-level claims.
+- Sheets are scrambled and unlabeled. Reviewers don't see labels or design notes.
+- A new category icon is tested on its own sheet, alongside the existing set.
+- Naming and grouping use two or three fresh AI model sessions per round. The preference test had three human participants.
 
 ## Known limitations
 
-- The wallet family was detected inconsistently in later model-based grouping runs; EUDI Wallets was the member most likely to drop out.
-- The registry relationship between Database Check and Biometric Registries was not detected once the full person capture frame was used. The clearer Biometric Registries icon was kept, accepting that loss.
-- The EU dots can resemble a loading indicator without labels.
-- Age Verification stands outside the component families and is read as the odd one out. At 24 px its keyhole can be mistaken for a person.
-- At 16 px, attribute icons that share a base differ only by a small badge. The five document icons are the hardest to tell apart; labels carry the field.
-- The three icons with a number sign (identifier, document number, personal number) all read as "a number".
-- eID Cards is specifically a card-based electronic identity category; it does not represent every form of electronic identity.
-- The set has not been evaluated across languages, cultures, assistive technologies, or a representative sample of digital identity users.
+- **Wallet family:** EUDI Wallets is the member reviewers most often miss.
+- **Registry:** reviewers rarely link Database Check and Biometric Registries.
+- **EU dots:** without a label, they can read as a loading indicator.
+- **Age Verification:** usually picked as the icon least like the set. At 24 px, the keyhole can read as a person.
+- **eID Cards:** represents card-based electronic IDs only.
+- **Attribute siblings:** at 16 px, icons on the same base differ only by a small badge. The five document icons are the hardest to tell apart.
+- **Numbers:** Identifier, Document number, and Personal number all read as "a number".
+- **Labels required:** Document status, Personal status, Portrait, Note, Image authenticity, Authentication, Screening, and Identity provider need their label to identify the field.
+- **Coverage:** not tested across languages, cultures, assistive technologies, or a representative sample of users.
 
-## How to test a contribution
+## Test a contribution
 
-1. Render the complete set at 24 px and 48 px.
-2. Scramble order and withhold all labels and rationale.
-3. Ask one reviewer to name the concrete object in each icon.
-4. Ask a different reviewer to group shared components and explain the perceived relationship.
-5. Record guesses and partial groups; do not force a one-to-one matching task that allows elimination to inflate the score.
-6. Change one variable at a time when diagnosing a failure.
-
-Testing should reveal ambiguity, not manufacture a pass rate.
+1. Render the full set at the target size and at 48 px.
+2. Scramble the order and remove the labels.
+3. Ask one reviewer to name the object in each icon.
+4. Ask a different reviewer to group the icons by shared parts.
+5. Record partial answers. Don't use a matching task: elimination inflates the score.

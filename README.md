@@ -140,6 +140,6 @@ npm run check
 
 ## More
 
-- [Design system](./docs/design-system.md): the grammar, the components and badges, and why they look the way they do
+- [Design system](./docs/design-system.md): the grammar, components, and badges
 - [Testing and limitations](./docs/testing.md)
 - [Browser gallery](./examples/gallery.html)
