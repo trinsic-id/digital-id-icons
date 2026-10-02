@@ -6,7 +6,7 @@ Digital ID Icons is built as a compositional language. Shared geometry indicates
 
 Every icon uses a 24×24 viewBox. Composed icons have two fixed regions:
 
-- **Top region, y 3–12:** what the identity is. Marks that meet the bottom component, such as the flagpole, the car and the candles, continue to it.
+- **Top region, y 3–12:** what the identity is. Marks that meet the bottom component, such as the flagpole and the car, continue to it.
 - **Bottom region, y 15–21:** how the identity is held or accessed.
 
 The drawing system uses:
@@ -14,7 +14,7 @@ The drawing system uses:
 - `stroke-width="2"`
 - round caps and joins
 - `fill="none"` for outlined geometry
-- `currentColor` for strokes and for the filled EU dots and candle flames
+- `currentColor` for strokes and for the filled EU dots
 - a recommended minimum display size of 24 px
 
 ## Pixel grid
@@ -35,7 +35,7 @@ Appears in Reusable IDs, Bank-based IDs, and eIDAS 1.0. The arrow entering a bou
 
 ### Registry
 
-The full three-band form is the Database Check icon. Biometric Registries and Age Verification use a compressed combining form to leave room for a top mark. The combining form is identical in both.
+The full three-band form is the Database Check icon. Biometric Registries uses a compressed combining form to leave room for a top mark.
 
 This is the system's one intentional component variation. The full and combining forms share the same meaning but are not byte-identical.
 
@@ -49,13 +49,15 @@ The frame stays inside the top region. Extending it around the full icon makes t
 
 Appears in EUDI Wallets and eIDAS 1.0. It is a seven-dot arc used as an abstract EU-related cue. It is not the twelve-star EU emblem, an official EUDI mark, or an official eIDAS mark. Any adaptations under CC BY 4.0 must not imply official status, sponsorship, approval, or endorsement.
 
-### Candles
+## Standalone icons
 
-Appears in Age Verification. Three birthday candles indicate that the answer is an age, not a full identity. The stems end where their round caps meet the top edge of the component below, the way the flagpole meets the wallet. The flames are filled because stroked teardrops read as arrowheads at 24 px.
+### Age Verification
 
-Age is a property of the person, not a way of holding or accessing an ID, so the candles sit in the top region. Age Verification places them on the combining registry because age is ultimately a fact in a date-of-birth record, and because candles on that base read as a birthday cake.
+A calendar with a keyhole. The calendar is the date of birth; the keyhole says it stays locked. An age check answers whether someone is old enough without handing over the date itself, so the icon shows a date you can't read rather than an age.
 
-Numerals were tested for this cue and rejected. “18+” names the concept instantly, but reviewers consistently singled it out as typography rather than a drawn object, and a number fixes one jurisdiction's threshold.
+It stands alone because age is not a way of holding or accessing an ID: the same answer can come from a wallet, a sign-in, or a registry lookup. The keyhole is outlined rather than filled. A filled circle over a trapezoid reads as a person at 24 px.
+
+Numerals and birthday imagery were tested for this icon and rejected. “18+” names the concept instantly, but reviewers consistently singled it out as typography rather than a drawn object, and a number fixes one jurisdiction's threshold. Candles read as age but also as a birthday cake, and said nothing about the privacy that makes a digital age check different from showing an ID card.
 
 ## Canonical compositions
 
@@ -69,10 +71,10 @@ Numerals were tested for this cue and rejected. “18+” names the concept inst
 | eIDAS 1.0 | EU dots | Sign-in |
 | Database Check | Full registry | — |
 | Biometric Registries | Person | Combining registry |
-| Age Verification | Candles | Combining registry |
+| Age Verification | Calendar with keyhole | — |
 | eID Cards | Standalone card and edge chip | — |
 
-eID Cards is deliberately uncomposed: it is the only physical card artifact in the set and is neither held in the system's wallet shape, entered through sign-in, nor represented as a direct lookup.
+eID Cards and Age Verification are deliberately uncomposed. eID Cards is the only physical card artifact in the set and is neither held in the system's wallet shape, entered through sign-in, nor represented as a direct lookup. Age Verification describes an answer that any of those access modes can return.
 
 ## Extending the set
 
