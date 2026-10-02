@@ -4,7 +4,14 @@ Public releases of Digital ID Icons will be recorded here. Internal design round
 
 ## Unreleased
 
+### Added
+
+- 44 attribute icons for the fields a verification returns, in `attributes/`, drawn to read at 16 px.
+- 11 attribute badges in `attributes/badges/`. The validator checks that each badge is identical in every icon that uses it.
+
 ### Changed
+
+- The person component is renamed `biometric`, since it is a biometric capture frame. The attribute set has its own person, meaning the individual.
 
 - Age Verification is redrawn as a calendar with a keyhole: a date of birth that is checked but stays locked. It is now a standalone icon rather than a composition on the registry.
 

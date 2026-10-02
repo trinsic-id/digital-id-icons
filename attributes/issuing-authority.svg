@@ -1,0 +1,11 @@
+<!-- Digital ID Icons by Trinsic Technologies, Inc. | CC BY 4.0 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 5L19.5 5A2.5 2.5 0 0 1 22 7.5L22 10.76M9.25 19L4.5 19A2.5 2.5 0 0 1 2 16.5L2 7.5A2.5 2.5 0 0 1 4.5 5M5.5 9L13.5 9M5.5 13L10 13"/>
+    <path d="M12.8 15l4.2-2.6 4.2 2.6z"/>
+    <path d="M14 17v2"/>
+    <path d="M17 17v2"/>
+    <path d="M20 17v2"/>
+    <path d="M12.5 21h9"/>
+  </g>
+</svg>

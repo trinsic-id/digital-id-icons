@@ -9,7 +9,7 @@ Open an issue that answers:
 1. What digital identity concept is missing?
 2. Who needs to distinguish it, and in what context?
 3. Which existing icons could it be confused with?
-4. Which component family should it join: wallet, sign-in, registry, person, EU-related, or none?
+4. Which component family should it join: wallet, sign-in, registry, biometric, EU-related, or none?
 5. Does the concept rely on a government, company, standards-body, or provider mark?
 
 Maintainers may decide that a concept is too specific, too ambiguous, or better represented by an existing icon.
@@ -26,7 +26,9 @@ Maintainers may decide that a concept is too specific, too ambiguous, or better 
 - Do not use embedded scripts, event handlers, external references, fonts, raster images, or editor metadata.
 - Do not copy path data from another icon set.
 
-Read [`docs/design-system.md`](./docs/design-system.md) before changing a component. The wallet's unbroken top edge, the position of the person frame, the bank lintel, and the database proportions are load-bearing.
+For an attribute icon, name the field it labels, the base it belongs on, and the badge that distinguishes it, or why it should stand alone.
+
+Read [`docs/design-system.md`](./docs/design-system.md) before changing a component. The wallet's unbroken top edge, the position of the biometric frame, the bank lintel, and the database proportions are load-bearing.
 
 ## Rights
 
