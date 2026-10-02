@@ -4,6 +4,7 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildSheet, sets, sheetPath } from "./build-preview.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const failures = [];
@@ -249,6 +250,20 @@ for (const iconPath of [...svgByRelativePath.keys()].filter(canonical)) {
   const duplicate = iconFingerprints.get(fingerprint);
   if (duplicate) fail(iconPath, `duplicates canonical geometry from ${duplicate}`);
   iconFingerprints.set(fingerprint, iconPath);
+}
+
+for (const name of Object.keys(sets)) {
+  const listed = sets[name].icons.map(([slug]) => `${slug}.svg`).sort();
+  if (JSON.stringify(listed) !== JSON.stringify([...expected[sets[name].directory]].sort())) {
+    fail("scripts/build-preview.mjs", `${name} preview does not list every icon in ${sets[name].directory}/`);
+  }
+  for (const theme of ["light", "dark"]) {
+    let current = "";
+    try { current = await readFile(sheetPath(name, theme), "utf8"); } catch {}
+    if (current !== await buildSheet(name, theme)) {
+      fail(path.relative(root, sheetPath(name, theme)), "is stale; run npm run preview");
+    }
+  }
 }
 
 const readme = await readFile(path.join(root, "README.md"), "utf8");

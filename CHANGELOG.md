@@ -2,7 +2,7 @@
 
 Public releases of Digital ID Icons will be recorded here. Internal design rounds are intentionally kept out of the public release history.
 
-## Unreleased
+## 1.1.0 — 2026-10-01
 
 ### Added
 
@@ -12,6 +12,7 @@ Public releases of Digital ID Icons will be recorded here. Internal design round
 ### Changed
 
 - The person component is renamed `biometric`, since it is a biometric capture frame. The attribute set has its own person, meaning the individual.
+- Documentation is consolidated: attribution, trademark, provenance, and accessibility guidance now live in the README and `LICENSE.md`.
 
 - Age Verification is redrawn as a calendar with a keyhole: a date of birth that is checked but stays locked. It is now a standalone icon rather than a composition on the registry.
 
